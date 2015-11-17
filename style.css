@@ -5,6 +5,7 @@ body {
 
 .main-container {
   padding: 40px;
+  overflow: hidden;
 }
 
 .thumbnail-outer-container {
@@ -92,6 +93,6 @@ body {
   width: 100%;
 }
 
-.vertical {
+.vertical, .horizontal-extra-wide {
   height: 100%;
 }

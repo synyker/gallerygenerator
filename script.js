@@ -1,24 +1,60 @@
 
 var current;
 var speed = 800;
+var thumbnailContainerWidth = 0;
+var thumbnailContainerWidthSet = false;
 
 $(document).ready(function() {
-  console.log(images);
 
-  $('<img />').attr('src', images[0] + '.jpg');
+  console.log(images);
+  $('.thumbnail-inner-container .thumbnail img').load(function() {
+    thumbnailContainerWidth += ($(this).width() + 65);
+  });
 
   setImage(0);
 
-  $.getJSON('data.json')
-  .done(function(data) {
-    console.log(data);
-  })
+  // $.getJSON('data.json')
+  // .done(function(data) {
+  //   console.log(data);
+  // })
+
+
 
 
   $('.thumbnail').click(function(e) {
     var id = $(this).attr('id');
     var el = $(this);
     setImage(el.data('image-id'));
+  });
+
+  $('.button').click(function(e) {
+
+    e.preventDefault();
+
+    if (!thumbnailContainerWidthSet) {
+      $('.thumbnail-inner-container').css('width', thumbnailContainerWidth + 'px');
+      thumbnailContainerWidthSet = true;
+    }
+
+    var thumbContainer = $('.thumbnail-outer-container');
+
+
+    if ($(this).hasClass('scroll-left')) {
+        scrollAmount = -(thumbContainer.width());
+    }
+    else {
+      scrollAmount = thumbContainer.width();
+    }
+
+    var curScroll = thumbContainer.scrollLeft();
+    var newScroll = curScroll + scrollAmount;
+
+    if (newScroll > thumbnailContainerWidth) {
+      thumbContainer.animate({ scrollLeft: thumbnailContainerWidth });
+      return;
+    }
+
+    thumbContainer.animate({ scrollLeft: newScroll });
   });
 
 
@@ -33,31 +69,37 @@ function setImage(imageId) {
   $('.image-container img').remove();
 
   var newImage = $('<img />').attr('src', images[imageId] + '.jpg');
-  console.log(newImage);
 
+  newImage.load(function() {
 
-  var height = newImage[0].height;
-  var width = newImage[0].width;
+    $('.image-container img').remove();
 
-  if (height > width) {
-    newImage.addClass('vertical');
-  }
-  else {
-    newImage.addClass('horizontal');
-  }
+    console.log(newImage);
 
-  var container = $('.image-container');
-  var containerHeight = container.height();
-  var containerWidth = container.width();
+    var height = newImage[0].height;
+    var width = newImage[0].width;
 
-  var left = $('.image-container').width() / 2 - (width * (containerHeight / height) / 2);
-  console.log(left);
-  console.log(newImage);
-  newImage.css('left', left);
+    var containerHeight = $('.image-container').height();
+    var left = $('.image-container').width() / 2 - (width * (containerHeight / height) / 2);
 
-  $('.image-container')
-    .append(newImage)
-    .hide()
-    .fadeIn(speed)
+    if (height > width) {
+      newImage.addClass('vertical');
+      newImage.css('left', left);
+    }
+    else if (height > containerHeight) {
+      newImage.addClass('horizontal-extra-wide');
+      newImage.css('left', left);
+    }
+    else {
+      newImage.addClass('horizontal');
+
+    }
+
+    $('.image-container')
+      .append(newImage)
+      .hide()
+      .fadeIn(speed)
+  })
+
 
 }
