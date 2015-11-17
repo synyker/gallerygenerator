@@ -5,13 +5,15 @@ var speed = 800;
 $(document).ready(function() {
   console.log(images);
 
+  $('<img />').attr('src', images[0] + '.jpg');
+
   setImage(0);
 
   $.getJSON('data.json')
   .done(function(data) {
     console.log(data);
   })
-  
+
 
   $('.thumbnail').click(function(e) {
     var id = $(this).attr('id');
