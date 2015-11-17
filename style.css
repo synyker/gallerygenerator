@@ -1,0 +1,97 @@
+body {
+  background-color: #1a1a1a;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.main-container {
+  padding: 40px;
+}
+
+.thumbnail-outer-container {
+  width: 85%;
+  height: 185px;
+  margin: 0 auto 25px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.thumbnail-inner-container {
+  width: 9000px;
+}
+
+.button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #fafafa;
+  vertical-align: top;
+  position: absolute;
+  top: 95px;
+}
+
+.button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 9px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.scroll-left {
+  left: 50px;
+}
+
+.scroll-left:after {
+  left: 8px;
+  border-width: 15px 26.0px 15px 0;
+  border-color: transparent #afafaf transparent transparent;
+}
+
+.scroll-right:after {
+  right: 8px;
+  border-width: 15px 0 15px 26.0px;
+  border-color: transparent transparent transparent #afafaf;
+}
+
+.scroll-right {
+  right: 50px;
+}
+
+.thumbnail {
+  display: inline-block;
+  margin: 0 25px;
+  vertical-align: middle;
+  border: 5px solid #fafafa;
+}
+
+.thumbnail .vertical {
+  height: 150px;
+}
+
+.thumbnail .horizontal {
+  width: 150px;
+}
+
+.image-container {
+  height: calc(100vh - 290px);
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.image-container img {
+  display: block;
+  margin: 0 auto;
+  border: 10px solid #fafafa;
+  position: absolute;
+  top: 0;
+}
+
+.horizontal {
+  width: 100%;
+}
+
+.vertical {
+  height: 100%;
+}
