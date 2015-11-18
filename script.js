@@ -7,12 +7,8 @@ var images;
 
 $(document).ready(function() {
 
-
-
-
   $.getJSON('images.json')
     .done(function(data) {
-      console.log(data);
       images = data;
       createThumbnails();
       setImage(0);
@@ -24,6 +20,7 @@ $(document).ready(function() {
   $('.thumbnail').click(function(e) {
     var id = $(this).attr('id');
     var el = $(this);
+    console.log($(this));
     setImage(el.data('image-id'));
   });
 
@@ -85,11 +82,11 @@ function setImage(imageId) {
 
   var newImage = $('<img />').attr('src', 'img/' + images[imageId]);
 
+  console.log(newImage);
+
   newImage.load(function() {
 
     $('.image-container img').remove();
-
-    console.log(newImage);
 
     var height = newImage[0].height;
     var width = newImage[0].width;
