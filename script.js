@@ -10,8 +10,8 @@ $(document).ready(function() {
   $.getJSON('images.json')
     .done(function(data) {
       images = data;
-      createThumbnails();
       setImage(0);
+      createThumbnails();
     })
     .fail(function( jqxhr, textStatus, error ) {
       console.log(error);
