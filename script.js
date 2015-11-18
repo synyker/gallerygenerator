@@ -81,7 +81,6 @@ function createThumbnails() {
 
   $('.thumbnail').click(function(e) {
     var el = $(this);
-    console.log($(this));
     setImage(el.data('image-id'));
   });
 
@@ -122,7 +121,5 @@ function setImage(imageId) {
       .hide()
       .fadeIn(speed)
   });
-
-  console.log(newImage);
 
 }
