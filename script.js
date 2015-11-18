@@ -18,7 +18,6 @@ $(document).ready(function() {
     });
 
   $('.thumbnail').click(function(e) {
-    var id = $(this).attr('id');
     var el = $(this);
     console.log($(this));
     setImage(el.data('image-id'));
