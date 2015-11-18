@@ -17,6 +17,18 @@ $(document).ready(function() {
       console.log(error);
     });
 
+
+  $('document').keydown(function(e) {
+    var newImage;
+    if (e.keyCode == 37) {
+      newImage = current - 1 > 0 ? current - 1 : current;
+    }
+    else if (e.keyCode == 39) {
+      newImage = current + 1 < images.length ? current + 1 : current;
+    }
+    setImage(newImage);
+  });
+
   $('.button').click(function(e) {
 
     e.preventDefault();
