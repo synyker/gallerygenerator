@@ -7,10 +7,7 @@ var images;
 
 $(document).ready(function() {
 
-  console.log(images);
-  $('.thumbnail-inner-container .thumbnail img').load(function() {
-    thumbnailContainerWidth += ($(this).width() + 65);
-  });
+
 
 
   $.getJSON('images.json')
@@ -35,8 +32,7 @@ $(document).ready(function() {
     e.preventDefault();
 
     if (!thumbnailContainerWidthSet) {
-      $('.thumbnail-inner-container').css('width', thumbnailContainerWidth + 'px');
-      thumbnailContainerWidthSet = true;
+      calculateThumbnailContainerWidth();
     }
 
     var thumbContainer = $('.thumbnail-outer-container');
@@ -62,6 +58,15 @@ $(document).ready(function() {
 
 
 });
+
+function calculateThumbnailContainerWidth() {
+  $('.thumbnail-inner-container .thumbnail img').each(function() {
+    thumbnailContainerWidth += ($(this).width() + 65);
+  });
+
+  $('.thumbnail-inner-container').css('width', thumbnailContainerWidth + 'px');
+  thumbnailContainerWidthSet = true;
+}
 
 function createThumbnails() {
 

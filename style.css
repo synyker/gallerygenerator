@@ -18,6 +18,8 @@ body {
 
 .thumbnail-inner-container {
   width: 9000px;
+  height: 162px;
+  overflow: hidden;
 }
 
 .button {
