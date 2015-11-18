@@ -16,12 +16,13 @@ $(document).ready(function() {
   $.ajax({
     dataType: 'json',
     url: 'images.json',
-    data: data,
-    success: success
+    success: function(data) {
+      console.log(data);
+      images = data;
+      createThumbnails();
+      setImage(0);
+    }
   });
-
-
-
 
   $('.thumbnail').click(function(e) {
     var id = $(this).attr('id');
@@ -62,12 +63,6 @@ $(document).ready(function() {
 
 });
 
-function setup(data) {
-  console.log(data);
-  images = data;
-  createThumbnails();
-  setImage(0);
-}
 function createThumbnails() {
 
   for (var i = 0; i < images.length; i++) {
