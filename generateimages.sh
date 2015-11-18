@@ -2,7 +2,7 @@ mkdir -p thumbs
 echo "[" >> images.json
 for f in img/*.jpg
 do
-	echo "'echo ${f##*/}'," >> images.json
+	echo "'${f##*/}'," >> images.json
   convert -thumbnail 200 $f thumbs/thumb-${f##*/}
 done
 

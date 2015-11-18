@@ -12,12 +12,13 @@ $(document).ready(function() {
     thumbnailContainerWidth += ($(this).width() + 65);
   });
 
-  $.getJSON('images.json')
-  .done(function(data) {
-    images = data;
-    createThumbnails();
-    setImage(0);
-  })
+
+  $.ajax({
+    dataType: 'json',
+    url: 'images.json',
+    data: data,
+    success: success
+  });
 
 
 
@@ -61,6 +62,12 @@ $(document).ready(function() {
 
 });
 
+function setup(data) {
+  console.log(data);
+  images = data;
+  createThumbnails();
+  setImage(0);
+}
 function createThumbnails() {
 
   for (var i = 0; i < images.length; i++) {
