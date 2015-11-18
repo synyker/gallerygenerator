@@ -79,9 +79,7 @@ function setImage(imageId) {
 
   $('.image-container img').remove();
 
-  var newImage = $('<img />').attr('src', 'img/' + images[imageId]);
-
-  console.log(newImage);
+  var newImage;
 
   newImage.load(function() {
 
@@ -110,6 +108,9 @@ function setImage(imageId) {
       .append(newImage)
       .hide()
       .fadeIn(speed)
-  })
+  });
+
+  newImage = $('<img />').attr('src', 'img/' + images[imageId]);
+  console.log(newImage);
 
 }
