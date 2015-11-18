@@ -18,13 +18,16 @@ $(document).ready(function() {
     });
 
 
-  $('document').keydown(function(e) {
+  $('body').keydown(function(e) {
     var newImage;
     if (e.keyCode == 37) {
-      newImage = current - 1 > 0 ? current - 1 : current;
+      newImage = current - 1 >= 0 ? current - 1 : current;
     }
     else if (e.keyCode == 39) {
       newImage = current + 1 < images.length ? current + 1 : current;
+    }
+    else {
+      return;
     }
     setImage(newImage);
   });
