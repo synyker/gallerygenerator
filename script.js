@@ -12,12 +12,15 @@ $(document).ready(function() {
     thumbnailContainerWidth += ($(this).width() + 65);
   });
 
-
-  $.getJSON('images.json', function(data) {
-    console.log(data);
-    images = data;
-    createThumbnails();
-    setImage(0);
+  $.ajax({
+    dataType: 'json',
+    url: 'images.json',
+    success: function(data) {
+      console.log(data);
+      images = data;
+      createThumbnails();
+      setImage(0);
+    }
   });
 
   $('.thumbnail').click(function(e) {
