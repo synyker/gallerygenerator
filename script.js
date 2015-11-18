@@ -17,12 +17,6 @@ $(document).ready(function() {
       console.log(error);
     });
 
-  $('.thumbnail').click(function(e) {
-    var el = $(this);
-    console.log($(this));
-    setImage(el.data('image-id'));
-  });
-
   $('.button').click(function(e) {
 
     e.preventDefault();
@@ -69,6 +63,12 @@ function createThumbnails() {
   for (var i = 0; i < images.length; i++) {
     $('.thumbnail-inner-container').append('<div class="thumbnail" id="image-' + i + '" data-image-id="'+ i +'"><img class="vertical" src="thumbs/thumb-' + images[i] +'" /></div>')
   }
+
+  $('.thumbnail').click(function(e) {
+    var el = $(this);
+    console.log($(this));
+    setImage(el.data('image-id'));
+  });
 
 }
 function setImage(imageId) {
