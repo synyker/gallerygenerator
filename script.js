@@ -77,8 +77,6 @@ function setImage(imageId) {
     return;
   current = imageId;
 
-  $('.image-container img').remove();
-
   var newImage;
 
   newImage.load(function() {
