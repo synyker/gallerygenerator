@@ -13,15 +13,11 @@ $(document).ready(function() {
   });
 
 
-  $.ajax({
-    dataType: 'json',
-    url: 'images.json',
-    success: function(data) {
-      console.log(data);
-      images = data;
-      createThumbnails();
-      setImage(0);
-    }
+  $.getJSON('images.json', function(data) {
+    console.log(data);
+    images = data;
+    createThumbnails();
+    setImage(0);
   });
 
   $('.thumbnail').click(function(e) {
