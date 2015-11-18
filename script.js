@@ -13,10 +13,12 @@ $(document).ready(function() {
 
   setImage(0);
 
-  // $.getJSON('data.json')
-  // .done(function(data) {
-  //   console.log(data);
-  // })
+  $.getJSON('images.json')
+  .done(function(data) {
+    images = data;
+    createThumbnails();
+    setImage(0);
+  })
 
 
 
@@ -60,6 +62,13 @@ $(document).ready(function() {
 
 });
 
+function createThumbnails() {
+
+  for (var i = 0; i < images.length; i++) {
+    $('.thumbnail-inner-container').append('<div class="thumbnail" id="image-' + i + '" data-image-id="'+ i +'"><img class="vertical" src="test2.jpg" /></div>')
+  }
+
+}
 function setImage(imageId) {
 
   if (imageId == current)
@@ -68,7 +77,7 @@ function setImage(imageId) {
 
   $('.image-container img').remove();
 
-  var newImage = $('<img />').attr('src', images[imageId] + '.jpg');
+  var newImage = $('<img />').attr('src', 'img/' + images[imageId] + '.jpg');
 
   newImage.load(function() {
 
@@ -100,6 +109,5 @@ function setImage(imageId) {
       .hide()
       .fadeIn(speed)
   })
-
 
 }
