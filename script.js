@@ -77,7 +77,7 @@ function setImage(imageId) {
     return;
   current = imageId;
 
-  var newImage;
+  var newImage = $('<img />').attr('src', 'img/' + images[imageId]);;
 
   newImage.load(function() {
 
@@ -108,7 +108,6 @@ function setImage(imageId) {
       .fadeIn(speed)
   });
 
-  newImage = $('<img />').attr('src', 'img/' + images[imageId]);
   console.log(newImage);
 
 }
