@@ -9,8 +9,8 @@ $(document).ready(function() {
 
   $.getJSON('images.json')
     .done(function(data) {
-      $('<img />').attr('src', 'img/' + images[0]);
       images = data;
+      $('<img />').attr('src', 'img/' + images[0]);
       setImage(0);
       createThumbnails();
     })
