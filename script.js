@@ -21,7 +21,7 @@ $(document).ready(function() {
       setImage(0);
     })
     .fail(function( jqxhr, textStatus, error ) {
-      console.console.log(error);
+      console.log(error);
     });
 
   $('.thumbnail').click(function(e) {
