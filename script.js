@@ -12,16 +12,17 @@ $(document).ready(function() {
     thumbnailContainerWidth += ($(this).width() + 65);
   });
 
-  $.ajax({
-    dataType: 'json',
-    url: 'images.json',
-    success: function(data) {
+
+  $.getJSON('images.json')
+    .done(function(data) {
       console.log(data);
       images = data;
       createThumbnails();
       setImage(0);
-    }
-  });
+    })
+    .fail(function( jqxhr, textStatus, error ) {
+      console.console.log(error);
+    });
 
   $('.thumbnail').click(function(e) {
     var id = $(this).attr('id');
