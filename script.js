@@ -3,6 +3,7 @@ var current;
 var speed = 800;
 var thumbnailContainerWidth = 0;
 var thumbnailContainerWidthSet = false;
+var images;
 
 $(document).ready(function() {
 
@@ -10,8 +11,6 @@ $(document).ready(function() {
   $('.thumbnail-inner-container .thumbnail img').load(function() {
     thumbnailContainerWidth += ($(this).width() + 65);
   });
-
-  setImage(0);
 
   $.getJSON('images.json')
   .done(function(data) {
