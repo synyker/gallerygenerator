@@ -1,5 +1,5 @@
 mkdir -p thumbs
-echo "\"images\":[" >> images.json
+echo "[" >> images.json
 for f in img/*.jpg
 do
 	echo "\"${f##*/}\"," >> images.json

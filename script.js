@@ -66,7 +66,7 @@ $(document).ready(function() {
 function createThumbnails() {
 
   for (var i = 0; i < images.length; i++) {
-    $('.thumbnail-inner-container').append('<div class="thumbnail" id="image-' + i + '" data-image-id="'+ i +'"><img class="vertical" src="test2.jpg" /></div>')
+    $('.thumbnail-inner-container').append('<div class="thumbnail" id="image-' + i + '" data-image-id="'+ i +'"><img class="vertical" src="img/thumbs/thumb-' + images[i] +'" /></div>')
   }
 
 }
@@ -78,7 +78,7 @@ function setImage(imageId) {
 
   $('.image-container img').remove();
 
-  var newImage = $('<img />').attr('src', 'img/' + images[imageId] + '.jpg');
+  var newImage = $('<img />').attr('src', 'img/' + images[imageId]);
 
   newImage.load(function() {
 
