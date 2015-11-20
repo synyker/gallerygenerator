@@ -1,6 +1,8 @@
 cp /home/raksuntalli/repos/gallerygenerator/html/* .
 
 mkdir -p thumbs
+rm images.json
+
 echo "[" >> images.json
 
 dir=('img/*.jpg')
