@@ -14,5 +14,6 @@ done
 
 last=${files[@]: -1:1}
 echo "\"${last##*/}\"" >> images.json
+convert -thumbnail 200 $last thumbs/thumb-${last##*/}
 
 echo "]" >> images.json
