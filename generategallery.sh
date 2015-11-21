@@ -1,4 +1,7 @@
-cp /home/raksuntalli/repos/gallerygenerator/html/* .
+ln -s index.html ~/repos/gallerygenerator/html/index.html
+ln -s reset.css ~/repos/gallerygenerator/html/reset.css
+ln -s script.js ~/repos/gallerygenerator/html/script.js .
+ln -s style.css ~/repos/gallerygenerator/html/style.css .
 
 mkdir -p thumbs
 rm images.json
@@ -8,7 +11,6 @@ echo "[" >> images.json
 dir=('img/*.jpg')
 files=($dir)
 for f in "${files[@]::${#files[@]}-1}"
-#for f in img/*.jpg
 do
 	echo "\"${f##*/}\"," >> images.json
   convert -thumbnail 200 $f thumbs/thumb-${f##*/}

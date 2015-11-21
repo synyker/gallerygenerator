@@ -1,6 +1,6 @@
 
 var current;
-var speed = 800;
+var speed = 450;
 var thumbnailContainerWidth = 0;
 var thumbnailContainerWidthSet = false;
 var images;
@@ -25,7 +25,7 @@ $(document).ready(function() {
     if (!thumbnailContainerWidthSet) {
       calculateThumbnailContainerWidth();
     }
-    
+
     var newImage;
     if (e.keyCode == 37) {
       newImage = current - 1 >= 0 ? current - 1 : current;
