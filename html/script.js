@@ -94,10 +94,10 @@ function updatePhotoRoll(imageId) {
 
   var thumbnail = $('.thumbnail:eq(' + imageId + ')');
 
-  if (imageId != 0 && typeof(thumbnail.offset()) === 'undefined')
+  if (imageId !== 0 && typeof(thumbnail.offset()) === 'undefined')
     return;
 
-  var offset = imageId === 0 ? 153 : thumnail.offset().left;
+  var offset = imageId === 0 ? 153 : thumbnail.offset().left;
   var thumbContainer = $('.thumbnail-outer-container');
 
   var outerWidth = thumbContainer.width() / 2;
