@@ -33,7 +33,7 @@ $(document).ready(function() {
 
     setImage(newImage);
     var left = $('.thumbnail:eq(' + current + ')').position().left;
-    $('.thumbnail-outer-container');.animate({ scrollLeft: newScroll });
+    $('.thumbnail-outer-container').animate({ scrollLeft: newScroll });
 
   });
 
@@ -96,7 +96,7 @@ function setImage(imageId) {
     return;
 
   $('thumbnail:eq(' + current + ')').removeClass('active');
-  
+
   current = imageId;
 
   $('thumbnail:eq(' + current + ')').addClass('active');
