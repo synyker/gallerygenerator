@@ -1,7 +1,9 @@
-ln -s ~/repos/gallerygenerator/html/index.html index.html
-ln -s ~/repos/gallerygenerator/html/reset.css reset.css
-ln -s ~/repos/gallerygenerator/html/script.js script.js
-ln -s ~/repos/gallerygenerator/html/style.css style.css
+#!/bin/bash
+
+ln -sf ~/repos/gallerygenerator/html/index.html index.html
+ln -sf ~/repos/gallerygenerator/html/reset.css reset.css
+ln -sf ~/repos/gallerygenerator/html/script.js script.js
+ln -sf ~/repos/gallerygenerator/html/style.css style.css
 
 mkdir -p thumbs
 rm images.json
