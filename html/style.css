@@ -65,7 +65,7 @@ body {
   display: inline-block;
   margin: 0 25px;
   vertical-align: middle;
-  border: 5px solid #fafafa;
+  border: 2px solid #fafafa;
 }
 
 .thumbnail.active {
@@ -90,7 +90,7 @@ body {
 .image-container img {
   display: block;
   margin: 0 auto;
-  border: 10px solid #fafafa;
+  border: 5px solid #fafafa;
   position: absolute;
   top: 0;
 }
