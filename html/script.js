@@ -36,7 +36,7 @@ $(document).ready(function() {
 
     var thumbContainer = $('.thumbnail-outer-container');
 
-    var left = thumbContainer.scrollLeft() + (direction * ($('.thumbnail:eq(' + current + ')').width() + 10 + 50) - thumbContainer.width() / 2);
+    var left = thumbContainer.scrollLeft() + (direction * ($('.thumbnail:eq(' + current + ')').width() + 10 + 50));
     thumbContainer.animate({ scrollLeft: left });
 
     setImage(newImage);
