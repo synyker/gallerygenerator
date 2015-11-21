@@ -33,7 +33,7 @@ $(document).ready(function() {
 
     setImage(newImage);
     var left = $('.thumbnail:eq(' + current + ')').position().left;
-    $('.thumbnail-outer-container').animate({ scrollLeft: newScroll });
+    $('.thumbnail-outer-container').animate({ scrollLeft: left });
 
   });
 
