@@ -103,10 +103,12 @@ function createThumbnails() {
 
 function updatePhotoRoll(imageId) {
 
+  var thumbnail = $('.thumbnail:eq(' + imageId + ')');
+
   var thumbContainer = $('.thumbnail-outer-container');
 
   var outerWidth = thumbContainer.width() / 2;
-  var left = thumbContainer.scrollLeft() + (($('.thumbnail:eq(' + current + ')').offset().left) - 140 - outerWidth)
+  var left = thumbContainer.scrollLeft() + ((thumbnail.offset().left) - 140 - outerWidth);
 
   thumbContainer.animate({ scrollLeft: left });
 
