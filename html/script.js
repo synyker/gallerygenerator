@@ -31,9 +31,13 @@ $(document).ready(function() {
       return;
     }
 
+    var thumbContainer = $('.thumbnail-outer-container');
+    var left = thumbContainer.scrollLeft() + ($('.thumbnail:eq(' + current + ')').width() + 10 + 50);
+    thumbContainer.animate({ scrollLeft: left });
+    
     setImage(newImage);
-    var left = $('.thumbnail:eq(' + current + ')').position().left;
-    $('.thumbnail-outer-container').animate({ scrollLeft: left });
+
+
 
   });
 
