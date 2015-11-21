@@ -95,11 +95,11 @@ function setImage(imageId) {
   if (imageId == current)
     return;
 
-  $('thumbnail:eq(' + current + ')').removeClass('active');
+  $('.thumbnail:eq(' + current + ')').removeClass('active');
 
   current = imageId;
 
-  $('thumbnail:eq(' + current + ')').addClass('active');
+  $('.thumbnail:eq(' + current + ')').addClass('active');
 
   var newImage = $('<img />').attr('src', 'img/' + images[imageId]);
 
