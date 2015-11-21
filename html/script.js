@@ -105,7 +105,7 @@ function updatePhotoRoll(imageId) {
 
   var thumbnail = $('.thumbnail:eq(' + imageId + ')');
 
-  if (!thumbnail)
+  if (typeof(thumbnail.offset()) === 'undefined')
     return;
 
   var thumbContainer = $('.thumbnail-outer-container');
