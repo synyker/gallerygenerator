@@ -4,6 +4,7 @@ var speed = 800;
 var thumbnailContainerWidth = 0;
 var thumbnailContainerWidthSet = false;
 var images;
+var queue = [];
 
 $(document).ready(function() {
 
@@ -150,4 +151,15 @@ function setImage(imageId) {
       .fadeIn(speed)
   });
 
+  addToQueue(newImage);
+
+}
+
+function addToQueue(image) {
+  if (queue.length > 0) {
+    for (var i = 0; i < queue.length; i++) {
+      queue[i].unbind('load');
+    }
+  }
+  queue.push(image);
 }
