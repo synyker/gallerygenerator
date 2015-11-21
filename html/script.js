@@ -34,11 +34,12 @@ $(document).ready(function() {
       return;
     }
 
+    var thumbContainer = $('.thumbnail-outer-container');
 
+    var left = thumbContainer.scrollLeft() + (direction * ($('.thumbnail:eq(' + current + ')').width() + 10 + 50) - thumbContainer.width() / 2);
+    thumbContainer.animate({ scrollLeft: left });
 
     setImage(newImage);
-
-
 
   });
 
@@ -97,10 +98,7 @@ function createThumbnails() {
 }
 
 function updatePhotoRoll(imageId) {
-  var thumbContainer = $('.thumbnail-outer-container');
 
-  var left = thumbContainer.scrollLeft() + (direction * ($('.thumbnail:eq(' + current + ')').width() + 10 + 50) - thumbContainer.width() / 2);
-  thumbContainer.animate({ scrollLeft: left });
 
   $('.thumbnail:eq(' + current + ')').removeClass('active');
 
