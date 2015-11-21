@@ -68,6 +68,10 @@ body {
   border: 5px solid #fafafa;
 }
 
+.thumbnail.active {
+  border-color: #777777;
+}
+
 .thumbnail .vertical {
   height: 150px;
 }

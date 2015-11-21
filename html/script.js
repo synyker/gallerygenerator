@@ -30,7 +30,11 @@ $(document).ready(function() {
     else {
       return;
     }
+
     setImage(newImage);
+    var left = $('.thumbnail:eq(' + current + ')').position().left;
+    $('.thumbnail-outer-container');.animate({ scrollLeft: newScroll });
+
   });
 
   $('.button').click(function(e) {
@@ -90,7 +94,12 @@ function setImage(imageId) {
 
   if (imageId == current)
     return;
+
+  $('thumbnail:eq(' + current + ')').removeClass('active');
+  
   current = imageId;
+
+  $('thumbnail:eq(' + current + ')').addClass('active');
 
   var newImage = $('<img />').attr('src', 'img/' + images[imageId]);
 
