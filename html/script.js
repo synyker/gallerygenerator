@@ -31,7 +31,7 @@ $(document).ready(function() {
       return;
     }
 
-    updatePhotoRoll(newImage);
+    //updatePhotoRoll(newImage);
     setImage(newImage);
 
   });
