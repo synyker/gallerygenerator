@@ -21,6 +21,11 @@ $(document).ready(function() {
 
 
   $('body').keydown(function(e) {
+
+    if (!thumbnailContainerWidthSet) {
+      calculateThumbnailContainerWidth();
+    }
+    
     var newImage;
     if (e.keyCode == 37) {
       newImage = current - 1 >= 0 ? current - 1 : current;
