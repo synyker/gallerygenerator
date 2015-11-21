@@ -105,6 +105,9 @@ function updatePhotoRoll(imageId) {
 
   var thumbnail = $('.thumbnail:eq(' + imageId + ')');
 
+  if (!thumbnail)
+    return;
+
   var thumbContainer = $('.thumbnail-outer-container');
 
   var outerWidth = thumbContainer.width() / 2;
