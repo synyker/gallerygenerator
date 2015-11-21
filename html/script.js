@@ -21,20 +21,23 @@ $(document).ready(function() {
 
   $('body').keydown(function(e) {
     var newImage;
+    var direction = 0;
     if (e.keyCode == 37) {
       newImage = current - 1 >= 0 ? current - 1 : current;
+      direction = -1;
     }
     else if (e.keyCode == 39) {
       newImage = current + 1 < images.length ? current + 1 : current;
+      direction = +;
     }
     else {
       return;
     }
 
     var thumbContainer = $('.thumbnail-outer-container');
-    var left = thumbContainer.scrollLeft() + ($('.thumbnail:eq(' + current + ')').width() + 10 + 50);
+    var left = thumbContainer.scrollLeft() + (direction * ($('.thumbnail:eq(' + current + ')').width() + 10 + 50));
     thumbContainer.animate({ scrollLeft: left });
-    
+
     setImage(newImage);
 
 
