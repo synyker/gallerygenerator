@@ -10,7 +10,7 @@ body {
 
 .thumbnail-outer-container {
   width: 85%;
-  height: 185px;
+  height: 156px;
   margin: 0 auto 25px;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -18,7 +18,7 @@ body {
 
 .thumbnail-inner-container {
   width: 9000px;
-  height: 162px;
+  height: 156px;
   overflow: hidden;
 }
 
@@ -81,7 +81,7 @@ body {
 }
 
 .image-container {
-  height: calc(100vh - 290px);
+  height: calc(100vh - 250px);
   width: 90%;
   margin: 0 auto;
   position: relative;
