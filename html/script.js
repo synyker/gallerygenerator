@@ -21,14 +21,11 @@ $(document).ready(function() {
 
   $('body').keydown(function(e) {
     var newImage;
-    var direction = 0;
     if (e.keyCode == 37) {
       newImage = current - 1 >= 0 ? current - 1 : current;
-      direction = -1;
     }
     else if (e.keyCode == 39) {
       newImage = current + 1 < images.length ? current + 1 : current;
-      direction = 1;
     }
     else {
       return;
@@ -97,13 +94,14 @@ function updatePhotoRoll(imageId) {
 
   var thumbnail = $('.thumbnail:eq(' + imageId + ')');
 
-  if (typeof(thumbnail.offset()) === 'undefined')
+  if (imageId != 0 && typeof(thumbnail.offset()) === 'undefined')
     return;
 
+  var offset = imageId === 0 ? 153 : thumnail.offset().left;
   var thumbContainer = $('.thumbnail-outer-container');
 
   var outerWidth = thumbContainer.width() / 2;
-  var left = thumbContainer.scrollLeft() + ((thumbnail.offset().left) - 140 - outerWidth);
+  var left = thumbContainer.scrollLeft() + (offset - 140 - outerWidth);
 
   thumbContainer.animate({ scrollLeft: left });
 
