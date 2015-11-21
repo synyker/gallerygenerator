@@ -34,15 +34,7 @@ $(document).ready(function() {
       return;
     }
 
-    //var thumbContainer = $('.thumbnail-outer-container');
-
-    //var left = thumbContainer.scrollLeft() + (direction * ($('.thumbnail:eq(' + current + ')').width() + 10 + 50));
-
-    //var outerWidth = thumbContainer.width() / 2;
-    //var left = thumbContainer.scrollLeft() + (($('.thumbnail:eq(' + current + ')').offset().left) - 140 - outerWidth)
-
-    //thumbContainer.animate({ scrollLeft: left });
-
+    updatePhotoRoll(newImage);
     setImage(newImage);
 
   });
