@@ -28,7 +28,7 @@ $(document).ready(function() {
     }
     else if (e.keyCode == 39) {
       newImage = current + 1 < images.length ? current + 1 : current;
-      direction = +;
+      direction = 1;
     }
     else {
       return;
