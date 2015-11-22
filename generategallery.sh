@@ -2,10 +2,10 @@
 
 repodir=`dirname $0`
 
-ln -sf $repodir/index.html index.html
-ln -sf $repodir/reset.css reset.css
-ln -sf $repodir/script.js script.js
-ln -sf $repodir/style.css style.css
+ln -sf $repodir/html/index.html index.html
+ln -sf $repodir/html/reset.css reset.css
+ln -sf $repodir/html/script.js script.js
+ln -sf $repodir/html/style.css style.css
 
 mkdir -p thumbs
 rm images.json
