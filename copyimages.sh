@@ -10,4 +10,4 @@ script=$(sed -n '4p' < $userdata)
 ssh $user@$host "cd $base; mkdir -p $1/img" &&
 scp ./* $user@$host:$base/$1/img/
 
-ssh $user@$host "cd $base/$1 && $script"
+ssh $user@$host "cd $base/$1 && $script/generategallery.sh"

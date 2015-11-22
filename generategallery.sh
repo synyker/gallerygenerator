@@ -1,9 +1,11 @@
 #!/bin/bash
 
-ln -sf ~/repos/gallerygenerator/html/index.html index.html
-ln -sf ~/repos/gallerygenerator/html/reset.css reset.css
-ln -sf ~/repos/gallerygenerator/html/script.js script.js
-ln -sf ~/repos/gallerygenerator/html/style.css style.css
+repodir=`dirname $0`
+
+ln -sf $repodir/index.html index.html
+ln -sf $repodir/reset.css reset.css
+ln -sf $repodir/script.js script.js
+ln -sf $repodir/style.css style.css
 
 mkdir -p thumbs
 rm images.json
