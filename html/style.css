@@ -1,6 +1,7 @@
 body {
   background-color: #1a1a1a;
   font-family: 'Ubuntu', sans-serif;
+  overflow: hidden;
 }
 
 .main-container {
@@ -81,7 +82,7 @@ body {
 }
 
 .image-container {
-  height: calc(100vh - 250px);
+  height: calc(100vh - 265px);
   width: 90%;
   margin: 0 auto;
   position: relative;
