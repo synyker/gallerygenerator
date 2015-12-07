@@ -176,8 +176,8 @@ function createSpinner(element) {
     var opts = {
         lines: 13, // The number of lines to draw
         length: 18, // The length of each line
-        width: 7, // The line thickness
-        radius: 15, // The radius of the inner circle
+        width: 5, // The line thickness
+        radius: 20, // The radius of the inner circle
         corners: 0.9, // Corner roundness (0..1)
         rotate: 0, // The rotation offset
         direction: 1, // 1: clockwise, -1: counterclockwise
@@ -201,7 +201,5 @@ function createSpinner(element) {
 }
 
 function stopSpinner() {
-    spinnerElement.removeClass('spinner-active');
-    spinnerElement.prop('disabled', false);
     spinner.stop();
 }
