@@ -131,6 +131,7 @@ function setImage(imageId) {
 
   newImage.load(function() {
 
+    updateCounter();
     stopSpinner();
     $('.image-container img').remove();
 
@@ -170,6 +171,10 @@ function addToQueue(image) {
     }
   }
   queue.push(image);
+}
+
+function updateCounter() {
+    $('.counter').html('<span>' + current + ' / ' + images.length + '</span>');
 }
 
 function createSpinner(element) {
