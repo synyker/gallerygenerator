@@ -128,6 +128,7 @@ function updateUrl() {
 }
 
 function setImage(imageId) {
+  console.log(imageId);
 
   if (imageId == current)
     return;
