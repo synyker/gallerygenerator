@@ -10,7 +10,7 @@ var spinner;
 $(document).ready(function() {
 
   var parameter = parseInt(location.search.split('image=')[1]);
-  current = $.isNumeric(parameter) ? parseInt(parameter) : 0;
+  current = $.isNumeric(parameter) ? parameter : 0;
 
   $.getJSON('images.json')
     .done(function(data) {
@@ -120,6 +120,11 @@ function updatePhotoRoll(imageId) {
   current = imageId;
 
   $('.thumbnail:eq(' + current + ')').addClass('active');
+}
+
+function updateUrl() {
+  var obj = { Title: 'Photo Gallery' Url: '?image=' + current };
+  history.pushState(obj, obj.Title, obj.Url);
 }
 
 function setImage(imageId) {
