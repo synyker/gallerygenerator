@@ -134,6 +134,7 @@ function setImage(imageId) {
 
   createSpinner();
   updatePhotoRoll(imageId);
+  updateUrl();
 
   var newImage = $('<img />').attr('src', 'img/' + images[imageId]);
 
