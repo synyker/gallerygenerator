@@ -124,7 +124,7 @@ function setImage(imageId) {
   if (imageId == current)
     return;
 
-  createSpinner(document.getElementsByClassName("image-container"));
+  createSpinner();
   updatePhotoRoll(imageId);
 
   var newImage = $('<img />').attr('src', 'img/' + images[imageId]);
@@ -192,7 +192,7 @@ function createSpinner(element) {
         left: '50%' // Left position relative to parent
     };
 
-    spinnerElement = $(element);
+    spinnerElement = $('.image-container');
 
     if (spinner) {
         spinner.stop();
