@@ -10,7 +10,7 @@ var spinner;
 $(document).ready(function() {
 
   var parameter = parseInt(location.search.split('image=')[1]);
-  current = $.isNumeric(parameter) ? parameter : 0;
+  current = $.isNumeric(parameter) ? parseInt(parameter) : 0;
 
   $.getJSON('images.json')
     .done(function(data) {
