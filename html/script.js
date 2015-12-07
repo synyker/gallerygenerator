@@ -16,7 +16,7 @@ $(document).ready(function() {
     .done(function(data) {
       images = data;
       $('<img />').attr('src', 'img/' + images[0]);
-      setImage(current);
+      setImage(current, true);
       createThumbnails();
     })
     .fail(function( jqxhr, textStatus, error ) {
@@ -41,8 +41,7 @@ $(document).ready(function() {
       return;
     }
 
-    //updatePhotoRoll(newImage);
-    setImage(newImage);
+    setImage(newImage, false);
 
   });
 
@@ -95,7 +94,7 @@ function createThumbnails() {
 
   $('.thumbnail').click(function(e) {
     var el = $(this);
-    setImage(el.data('image-id'));
+    setImage(el.data('image-id'), false);
   });
 
 }
@@ -127,10 +126,10 @@ function updateUrl() {
   history.pushState(urlHistory, urlHistory.Title, urlHistory.Url);
 }
 
-function setImage(imageId) {
+function setImage(imageId, first) {
   console.log(imageId);
 
-  if (imageId == current)
+  if (imageId == current && first == false)
     return;
 
   createSpinner();
