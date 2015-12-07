@@ -9,11 +9,14 @@ var spinner;
 
 $(document).ready(function() {
 
+  var parameter = parseInt(location.search.split('image=')[1]);
+  current = $.isNumeric(parameter) ? parseInt(parameter) : 0;
+
   $.getJSON('images.json')
     .done(function(data) {
       images = data;
       $('<img />').attr('src', 'img/' + images[0]);
-      setImage(0);
+      setImage(current);
       createThumbnails();
     })
     .fail(function( jqxhr, textStatus, error ) {
@@ -174,7 +177,7 @@ function addToQueue(image) {
 }
 
 function updateCounter() {
-    $('.counter').html('<span>' + current + ' / ' + images.length + '</span>');
+    $('.counter').html('<span>' + (current + 1) + ' / ' + images.length + '</span>');
 }
 
 function createSpinner(element) {
