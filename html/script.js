@@ -124,12 +124,14 @@ function setImage(imageId) {
   if (imageId == current)
     return;
 
+  createSpinner(document.getElementsByClassName("image-container"));
   updatePhotoRoll(imageId);
 
   var newImage = $('<img />').attr('src', 'img/' + images[imageId]);
 
   newImage.load(function() {
 
+    stopSpinner();
     $('.image-container img').remove();
 
     var height = newImage[0].height;
