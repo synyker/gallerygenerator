@@ -123,7 +123,7 @@ function updatePhotoRoll(imageId) {
 }
 
 function updateUrl() {
-  var obj = { Title: 'Photo Gallery' Url: '?image=' + current };
+  var urlHistory = { Title: 'Photo Gallery', Url: '?image=' + current };
   history.pushState(obj, obj.Title, obj.Url);
 }
 
